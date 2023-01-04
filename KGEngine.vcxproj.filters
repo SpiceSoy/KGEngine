@@ -1,0 +1,103 @@
+<?xml version="1.0" ?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+	<ItemGroup>
+		<Filter Include="Common">
+			<Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx;h;hh;hpp;hxx;hm;inl;inc;ipp;xsd;rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms;</Extensions>
+		</Filter>
+		<Filter Include="Core">
+			<Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx;h;hh;hpp;hxx;hm;inl;inc;ipp;xsd;rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms;</Extensions>
+		</Filter>
+		<Filter Include="Platform">
+			<Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx;h;hh;hpp;hxx;hm;inl;inc;ipp;xsd;rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms;</Extensions>
+		</Filter>
+		<Filter Include="Renderer">
+			<Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx;h;hh;hpp;hxx;hm;inl;inc;ipp;xsd;rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms;</Extensions>
+		</Filter>
+		<Filter Include="Common\Define">
+			<Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx;h;hh;hpp;hxx;hm;inl;inc;ipp;xsd;rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms;</Extensions>
+		</Filter>
+		<Filter Include="Core\Engine">
+			<Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx;h;hh;hpp;hxx;hm;inl;inc;ipp;xsd;rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms;</Extensions>
+		</Filter>
+		<Filter Include="Platform\Core">
+			<Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx;h;hh;hpp;hxx;hm;inl;inc;ipp;xsd;rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms;</Extensions>
+		</Filter>
+		<Filter Include="Platform\Windows">
+			<Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx;h;hh;hpp;hxx;hm;inl;inc;ipp;xsd;rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms;</Extensions>
+		</Filter>
+		<Filter Include="Platform\Windows\EntryPoint">
+			<Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx;h;hh;hpp;hxx;hm;inl;inc;ipp;xsd;rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms;</Extensions>
+		</Filter>
+		<Filter Include="Renderer\Core">
+			<Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx;h;hh;hpp;hxx;hm;inl;inc;ipp;xsd;rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms;</Extensions>
+		</Filter>
+		<Filter Include="Renderer\D3D12">
+			<Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx;h;hh;hpp;hxx;hm;inl;inc;ipp;xsd;rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms;</Extensions>
+		</Filter>
+	</ItemGroup>
+	<ItemGroup>
+		<ClCompile Include="Source\Common\Define\Define.ixx">
+			<Filter>Common\Define</Filter>
+		</ClCompile>
+		<ClCompile Include="Source\Common\Define\DelegateSystem.ixx">
+			<Filter>Common\Define</Filter>
+		</ClCompile>
+		<ClCompile Include="Source\Common\Define\EventSender.ixx">
+			<Filter>Common\Define</Filter>
+		</ClCompile>
+		<ClCompile Include="Source\Common\Define\EventSystem.ixx">
+			<Filter>Common\Define</Filter>
+		</ClCompile>
+		<ClCompile Include="Source\Common\Define\GlobalMacro.h">
+			<Filter>Common\Define</Filter>
+		</ClCompile>
+		<ClCompile Include="Source\Common\Define\MainParent.ixx">
+			<Filter>Common\Define</Filter>
+		</ClCompile>
+		<ClCompile Include="Source\Common\Define\Vector.ixx">
+			<Filter>Common\Define</Filter>
+		</ClCompile>
+		<ClCompile Include="Source\Core\Engine\KGEngine.cpp">
+			<Filter>Core\Engine</Filter>
+		</ClCompile>
+		<ClCompile Include="Source\Core\Engine\KGEngine.ixx">
+			<Filter>Core\Engine</Filter>
+		</ClCompile>
+		<ClCompile Include="Source\Platform\Core\PlatformCore.ixx">
+			<Filter>Platform\Core</Filter>
+		</ClCompile>
+		<ClCompile Include="Source\Platform\Windows\PlatformWindows.ixx">
+			<Filter>Platform\Windows</Filter>
+		</ClCompile>
+		<ClCompile Include="Source\Platform\Windows\EntryPoint\framework.h">
+			<Filter>Platform\Windows\EntryPoint</Filter>
+		</ClCompile>
+		<ClCompile Include="Source\Platform\Windows\EntryPoint\PlatformDefine.h">
+			<Filter>Platform\Windows\EntryPoint</Filter>
+		</ClCompile>
+		<ClCompile Include="Source\Platform\Windows\EntryPoint\Resource.h">
+			<Filter>Platform\Windows\EntryPoint</Filter>
+		</ClCompile>
+		<ClCompile Include="Source\Platform\Windows\EntryPoint\targetver.h">
+			<Filter>Platform\Windows\EntryPoint</Filter>
+		</ClCompile>
+		<ClCompile Include="Source\Platform\Windows\EntryPoint\WinMain.cpp">
+			<Filter>Platform\Windows\EntryPoint</Filter>
+		</ClCompile>
+		<ClCompile Include="Source\Renderer\Core\RenderCore.cpp">
+			<Filter>Renderer\Core</Filter>
+		</ClCompile>
+		<ClCompile Include="Source\Renderer\Core\RenderCore.ixx">
+			<Filter>Renderer\Core</Filter>
+		</ClCompile>
+		<ClCompile Include="Source\Renderer\Core\RenderSetting.ixx">
+			<Filter>Renderer\Core</Filter>
+		</ClCompile>
+		<ClCompile Include="Source\Renderer\D3D12\RenderD3D12.ixx">
+			<Filter>Renderer\D3D12</Filter>
+		</ClCompile>
+		<ClCompile Include="Source\Renderer\D3D12\RhiD3D12.ixx">
+			<Filter>Renderer\D3D12</Filter>
+		</ClCompile>
+	</ItemGroup>
+</Project>
