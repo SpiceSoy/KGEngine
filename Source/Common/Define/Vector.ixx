@@ -6,10 +6,13 @@
 //  @date 2022/12/25
 // =================================================================================================
 module;
+
 #include "Common/Define/GlobalMacro.h"
+
 export module KG.Common.Define.Vector;
 
 import KG.Platform.Core.PlatformCore;
+
 
 namespace KG
 {

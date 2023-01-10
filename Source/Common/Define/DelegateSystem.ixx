@@ -6,9 +6,11 @@
 //  @date 2022/12/25
 // =================================================================================================
 module;
+
 #include "Common/Define/GlobalMacro.h"
 #include <map>
 #include <functional>
+
 export module KG.Common.Define.DelegateSystem;
 
 import KG.Platform.Core.PlatformCore;

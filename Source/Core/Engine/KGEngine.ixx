@@ -6,9 +6,15 @@
 //  @date 2022/09/19
 // =================================================================================================
 module;
+
 #include <fstream>
 #include <string>
+
 export module KG.Core.Engine;
+
+import KG.Common.Define.MainModule;
+import KG.Renderer.Core.RenderCore;
+
 
 namespace KG
 {
@@ -19,7 +25,7 @@ namespace KG
 	{
 	private:
 		std::ofstream LogFileStream;
-
+		FModuleContainer container;
 	public:
 		//----------------------------------------------------------------------
 		//! @brief 초기화한다.

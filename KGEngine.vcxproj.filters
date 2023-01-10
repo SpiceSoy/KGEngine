@@ -51,6 +51,9 @@
 		<ClCompile Include="Source\Common\Define\GlobalMacro.h">
 			<Filter>Common\Define</Filter>
 		</ClCompile>
+		<ClCompile Include="Source\Common\Define\MainModule.ixx">
+			<Filter>Common\Define</Filter>
+		</ClCompile>
 		<ClCompile Include="Source\Common\Define\MainParent.ixx">
 			<Filter>Common\Define</Filter>
 		</ClCompile>
@@ -88,6 +91,9 @@
 			<Filter>Renderer\Core</Filter>
 		</ClCompile>
 		<ClCompile Include="Source\Renderer\Core\RenderCore.ixx">
+			<Filter>Renderer\Core</Filter>
+		</ClCompile>
+		<ClCompile Include="Source\Renderer\Core\RenderEventListener.ixx">
 			<Filter>Renderer\Core</Filter>
 		</ClCompile>
 		<ClCompile Include="Source\Renderer\Core\RenderSetting.ixx">

@@ -5,10 +5,11 @@
 //  
 //  @date 2022/12/26
 // =================================================================================================
-
 #pragma once
+
 #include <type_traits>
 #include <string_view>
+
 
 namespace KG
 {
@@ -99,7 +100,7 @@ namespace KG
 		virtual FClassName GetName() const override { return _className.GetName(); }
 
 #define IMPLEMENT_KG_OBJECT( TYPE ) \
-	FClassName KG::TClassName< TYPE >::_className = #TYPE;
+	KG::FClassName KG::TClassName< TYPE >::_className = #TYPE;
 
 
 namespace KG::Concept
@@ -124,4 +125,29 @@ namespace KG::Concept
 
 	template<typename Ty>
 	concept IsPointer = std::is_pointer_v<Ty>;
+
+	template<typename Ty>
+	concept IsPureType = std::is_same_v<Ty, std::remove_cvref_t<Ty>>;
+
+	template<typename Ty, typename BaseTy>
+	concept IsBaseOf = std::is_base_of_v<BaseTy, Ty>;
+
+	template<typename Ty1, typename Ty2>
+	concept IsConvertible = std::is_convertible_v<Ty1, Ty2>;
+
+	template<typename Ty>
+	concept IsEnum = std::is_enum_v<Ty>;
 }
+
+template <typename InType, typename OutType = std::underlying_type_t<InType>> requires KG::Concept::IsEnum<InType>
+OutType EnumToValue( InType InEnum )
+{
+	return static_cast<OutType>( InEnum );
+}
+
+template <typename OutType, typename InType = std::underlying_type_t<OutType>> requires KG::Concept::IsEnum<OutType>
+OutType ValueToEnum( InType InValue )
+{
+	return static_cast<OutType>( InValue );
+}
+

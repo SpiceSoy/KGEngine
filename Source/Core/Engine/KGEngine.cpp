@@ -5,13 +5,14 @@
 //  
 //  @date 2022/12/12
 // =================================================================================================
+import KG.Core.Engine;
+import KG.Common.Define.MainModule;
+import KG.Renderer.Core.RenderCore;
+
 #include <compare>
 #include <fstream>
 #include <string_view>
 #include <iostream>
-
-
-import KG.Core.Engine;
 
 
 //----------------------------------------------------------------------
@@ -21,6 +22,12 @@ void KG::KGEngine::Initialize()
 {
 	LogFileStream.open( "Content/Log/KGEngine.log" );
 	std::clog.rdbuf( LogFileStream.rdbuf() );
+
+
+	RenderCore a;
+	container.AddModule( &a );
+
+	container.Call<FBaseModuleRenderAble, &FBaseModuleRenderAble::Render>();
 }
 
 //---------------------------------------------------------------------

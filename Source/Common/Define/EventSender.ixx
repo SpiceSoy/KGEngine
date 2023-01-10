@@ -6,8 +6,10 @@
 //  @date 2022/12/25
 // =================================================================================================
 module;
+
 #include "Common/Define/GlobalMacro.h"
 #include <set>
+
 export module KG.Common.Define.EventSender;
 
 import KG.Platform.Core.PlatformCore;
@@ -23,6 +25,7 @@ namespace KG
 	class TBaseEventSender : IKGType
 	{
 		DECLARE_KG_TYPE( TBaseEventSender<Ty> )
+
 	private:
 		std::set<Ty*> Listeners;
 
@@ -63,13 +66,13 @@ namespace KG
 		//----------------------------------------------------------------------
 		//! @brief 
 		//----------------------------------------------------------------------
-		void NotifyEvent( void ( Ty::*InFunctionPtr )() )
+		void NotifyEvent( void ( Ty::* InFunctionPtr )() )
 		{
 			for ( Ty* ptr : Listeners )
 			{
 				if ( !ptr ) continue;
 
-				ptr->*InFunctionPtr();
+				(ptr->*InFunctionPtr)();
 			}
 		}
 
@@ -77,13 +80,13 @@ namespace KG
 		//! @brief 
 		//----------------------------------------------------------------------
 		template<typename... Tys >
-		void NotifyEvent( void ( Ty::*InFunctionPtr )(),  Tys... InArgs )
+		void NotifyEvent( void ( Ty::* InFunctionPtr )( Tys... ), Tys... InArgs )
 		{
 			for ( Ty* ptr : Listeners )
 			{
 				if ( !ptr ) continue;
 
-				ptr->*InFunctionPtr( InArgs... );
+				(ptr->*InFunctionPtr)( InArgs... );
 			}
 		}
 	};

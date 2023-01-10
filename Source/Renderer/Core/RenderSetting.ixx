@@ -9,6 +9,7 @@ export module KG.Renderer.Core.RenderSetting;
 
 import KG.Common.Define;
 
+
 namespace KG
 {
     //----------------------------------------------------------------------

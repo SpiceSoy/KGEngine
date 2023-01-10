@@ -6,13 +6,15 @@
 //  @date 2022/12/25
 // =================================================================================================
 module;
+
 #include "Common/Define/GlobalMacro.h"
 #include <map>
 #include <functional>
+
 export module KG.Common.Define.EventSystem;
 
-import KG.Platform.Core.PlatformCore;
 import KG.Common.Define.DelegateSystem;
+import KG.Platform.Core.PlatformCore;
 
 
 namespace KG
@@ -73,9 +75,9 @@ namespace KG
 		}
 
 		template <typename ListenerTyPtr>  requires Concept::IsPointer<ListenerTyPtr>
-		bool HasClass( ListenerTyPtr Ptr ) const
+		bool HasClass( ListenerTyPtr InPtr ) const
 		{
-			return PtrDelegateMap.contains( Ptr );
+			return PtrDelegateMap.contains( InPtr );
 		}
 
 		void RemoveHandle( FEventHandle InHandle )
@@ -87,11 +89,11 @@ namespace KG
 		}
 
 		template <typename ListenerTyPtr>  requires Concept::IsPointer<ListenerTyPtr>
-		void RemoveClass( ListenerTyPtr Ptr )
+		void RemoveClass( ListenerTyPtr InPtr )
 		{
-			if ( HasClass( Ptr ) )
+			if ( HasClass( InPtr ) )
 			{
-				PtrDelegateMap.erase( Ptr );
+				PtrDelegateMap.erase( InPtr );
 			}
 		}
 
