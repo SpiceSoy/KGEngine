@@ -1,5 +1,5 @@
 // =================================================================================================
-//  @file RenderCore.ixx
+//  @file FRenderCore.ixx
 // 
 //  @brief 그래픽 렌더러 코어
 //  
@@ -20,40 +20,46 @@ import KG.Common.Define.EventSender;
 namespace KG
 {
 	//----------------------------------------------------------------------
-	//! @brief 렌더러 코어 인터페이스
+	//! @brief 렌더링 분배 코어 인터페이스
 	//----------------------------------------------------------------------
-	export class RenderCore : public IKGObject, public TBaseEventSender< IRenderEventListener >,
-		public FModuleFunctionCombination<
-		FBaseModuleRenderAble
-	>
+	export class FRenderCore : public TBaseEventSender< IRenderEventListener >
 	{
-		DECLARE_KG_OBJECT( RenderCore )
+	public:
+		//----------------------------------------------------------------------
+		//! @brief 생성자
+		//----------------------------------------------------------------------
+		FRenderCore() = default;
+
+		//----------------------------------------------------------------------
+		//! @brief 소멸자
+		//----------------------------------------------------------------------
+		virtual ~FRenderCore() = default;
 
 		//----------------------------------------------------------------------
 		//! @brief 초기화한다.
 		//! @return 초기화 성공 여부
 		//----------------------------------------------------------------------
-		bool Initialize( const RenderSetting& InRenderSetting );
+		virtual bool Initialize( const FRenderSetting& InRenderSetting );
 
 		//----------------------------------------------------------------------
-		//! @brief 
+		//! @brief 렌더 씬을 제출한다
 		//----------------------------------------------------------------------
-		void Update();
+		virtual void SubmitRenderScene();
 
 		//----------------------------------------------------------------------
-		//! @brief 
+		//! @brief 렌더링을 시작한다
 		//----------------------------------------------------------------------
-		void PreRender();
+		virtual void StartRender();
 
 		//----------------------------------------------------------------------
-		//! @brief 
+		//! @brief 렌더링 종료까지 기다린다.
 		//----------------------------------------------------------------------
-		virtual void Render() override;
+		virtual void WaitForRenderEnd();
 
 		//----------------------------------------------------------------------
 		//! @brief 
 		//! @param InRenderSetting 
 		//----------------------------------------------------------------------
-		void OnChangeSettings( const RenderSetting& InRenderSetting );
+		virtual void OnChangeSettings( const FRenderSetting& InRenderSetting );
 	};
 }

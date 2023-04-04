@@ -1,0 +1,1 @@
+set PYTHONPATH="C:\Program Files\Python39"

@@ -1,5 +1,5 @@
 // =================================================================================================
-//  @file RenderCore.cpp
+//  @file FRenderCore.cpp
 // 
 //  @brief 렌더 코드 CPP
 //  
@@ -13,27 +13,36 @@ import KG.Common.Define.EventSender;
 import KG.Renderer.Core.RenderEventListener;
 import KG.Renderer.Core.RenderSetting;
 
-IMPLEMENT_KG_OBJECT( KG::RenderCore );
+IMPLEMENT_KG_OBJECT( KG::FRenderCore );
 
 //----------------------------------------------------------------------
 //! @brief 
 //! @param InRenderSetting 
 //! @return 
 //----------------------------------------------------------------------
-bool KG::RenderCore::Initialize( const KG::RenderSetting& InRenderSetting )
+bool KG::FRenderCore::Initialize( const KG::FRenderSetting& InRenderSetting )
 {
     return false;
 }
 
-void KG::RenderCore::Update()
+//----------------------------------------------------------------------
+//! @brief 
+//----------------------------------------------------------------------
+void KG::FRenderCore::SubmitRenderScene()
 {
 }
 
-void KG::RenderCore::PreRender()
+//----------------------------------------------------------------------
+//! @brief
+//----------------------------------------------------------------------
+void KG::FRenderCore::StartRender()
 {
 }
 
-void KG::RenderCore::Render()
+//----------------------------------------------------------------------
+//! @brief 
+//----------------------------------------------------------------------
+void KG::FRenderCore::WaitForRenderEnd()
 {
 }
 
@@ -41,7 +50,7 @@ void KG::RenderCore::Render()
 //! @brief 
 //! @param InRenderSetting 
 //----------------------------------------------------------------------
-void KG::RenderCore::OnChangeSettings( const KG::RenderSetting& InRenderSetting )
+void KG::FRenderCore::OnChangeSettings( const KG::FRenderSetting& InRenderSetting )
 {
-    NotifyEvent<const RenderSetting&>( &IRenderEventListener::OnChangeRenderSetting, InRenderSetting );
+    NotifyEvent<const FRenderSetting&>( &IRenderEventListener::OnChangeRenderSetting, InRenderSetting );
 }

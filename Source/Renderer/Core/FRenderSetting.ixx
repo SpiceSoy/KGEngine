@@ -1,5 +1,5 @@
 // =================================================================================================
-//  @file RenderCore.ixx
+//  @file FRenderCore.ixx
 // 
 //  @brief 그래픽 렌더러 코어
 //  
@@ -15,7 +15,7 @@ namespace KG
     //----------------------------------------------------------------------
     //! @brief 렌더러 코어 인터페이스
     //----------------------------------------------------------------------
-    export struct RenderSetting
+    export struct FRenderSetting
     {
         FVector2DU DeviceResolution;
         FVector2DU WindowResolution;

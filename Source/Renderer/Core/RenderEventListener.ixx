@@ -1,5 +1,5 @@
 // =================================================================================================
-//  @file RenderCore.ixx
+//  @file FRenderCore.ixx
 // 
 //  @brief 그래픽 렌더러 코어
 //  
@@ -16,7 +16,7 @@ import KG.Platform.Core.PlatformCore;
 
 namespace KG
 {
-	export struct RenderSetting;
+	export struct FRenderSetting;
 
 	//----------------------------------------------------------------------
 	//! @brief 렌더러 코어 인터페이스
@@ -26,7 +26,7 @@ namespace KG
 		DECLARE_KG_TYPE( IRenderEventListener )
 
 	public:
-		virtual void OnChangeRenderSetting( const RenderSetting& InRenderSetting ) {}
+		virtual void OnChangeRenderSetting( const FRenderSetting& InRenderSetting ) {}
 
 		virtual void OnStopped() {}
 	};

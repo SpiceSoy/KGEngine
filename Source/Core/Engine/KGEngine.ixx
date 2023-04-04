@@ -25,7 +25,8 @@ namespace KG
 	{
 	private:
 		std::ofstream LogFileStream;
-		FModuleContainer container;
+		FModuleContainer ModuleContainer;
+
 	public:
 		//----------------------------------------------------------------------
 		//! @brief 초기화한다.

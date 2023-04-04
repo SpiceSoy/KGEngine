@@ -24,10 +24,7 @@ void KG::KGEngine::Initialize()
 	std::clog.rdbuf( LogFileStream.rdbuf() );
 
 
-	RenderCore a;
-	container.AddModule( &a );
-
-	container.Call<FBaseModuleRenderAble, &FBaseModuleRenderAble::Render>();
+	FRenderCore* core = new FRenderCore();
 }
 
 //---------------------------------------------------------------------
